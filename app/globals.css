@@ -1,26 +1,359 @@
-@import "tailwindcss";
+/* ------------------------------------------------------
+   FONT IMPORTS
+------------------------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 
+/* ------------------------------------------------------
+   ROOT VARIABLES
+------------------------------------------------------ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Typography */
+  --font-primary: "Montserrat", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  /* Core Palette */
+  --color-navy: #0A1A2F;        /* Deep, elegant navy */
+  --color-navy-soft: #1C2B3F;   /* Softer navy for body text */
+  --color-muted: #5A6475;       /* Muted gray for captions */
+  --color-bg: #F7F9FC;          /* Soft, clean background */
+  --color-text: #1A1A1A;        /* Neutral dark text */
+
+  /* Optional accents */
+  --color-accent: #C8A97E;      /* Muted gold for subtle highlights */
+  --color-border: #E2E6EB;      /* Light border for cards/sections */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* ------------------------------------------------------
+   GLOBAL RESET / BASE
+------------------------------------------------------ */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Smooth typography scaling */
+h1, h2, h3, p {
+  margin: 0;
+}
+
+/* ------------------------------------------------------
+   HEADINGS
+------------------------------------------------------ */
+h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.1;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 500;
+  color: var(--color-navy);
+}
+
+h3 {
+  font-family: var(--font-primary);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 500;
+  color: var(--color-navy-soft);
+}
+
+/* ------------------------------------------------------
+   PARAGRAPHS & TEXT
+------------------------------------------------------ */
+p {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  font-weight: 500; /* lighter weight */
+  color: var(--color-navy-soft);
+  line-height: 1.7;
+}
+
+
+.caption {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  font-weight: 300;
+  margin-top: 0.75rem;
+}
+
+/* ------------------------------------------------------
+   HERO SECTION
+------------------------------------------------------ */
+.hero {
+  width: 100%;
+  background: var(--color-bg);
+  padding: 5rem 0;
+}
+
+/* ------------------------------------------------------
+   LAYOUT CONTAINER
+------------------------------------------------------ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.textBlock {
+  max-width: 600px;
 }
+
+/* ------------------------------------------------------
+   TYPOGRAPHY UTILITY CLASSES
+------------------------------------------------------ */
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin-top: 1.25rem;
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  color: var(--color-navy-soft);
+  line-height: 1.7;
+}
+
+/* ------------------------------------------------------
+   IMAGES
+------------------------------------------------------ */
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+#father,
+#career,
+#bio {
+  scroll-margin-top: 120px; /* adjust based on navbar height */
+}
+
+.navbar {
+  width: 100%;
+  background-color: var(--color-navy);
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: var(--font-primary);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Desktop Navigation */
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-size: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.navLinks a:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Toggle */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: var(--color-navy);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    display: none;
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+}
+
+/* ------------------------------------------------------
+   UNIVERSAL SECTION LAYOUT
+------------------------------------------------------ */
+
+.section {
+  width: 100%;
+  padding: 6rem 0;
+  background: var(--color-bg);
+  scroll-margin-top: 120px;
+}
+
+/* Optional dark variant */
+.section--dark {
+  background: var(--color-navy);
+  color: white;
+}
+
+/* ------------------------------------------------------
+   CONTAINER
+------------------------------------------------------ */
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ------------------------------------------------------
+   GRID / ROWS
+------------------------------------------------------ */
+
+.section-row {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .section-row {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+/* Reversed layout */
+.section-row.reverse {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .section-row.reverse {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    direction: rtl;
+  }
+
+  .section-row.reverse > * {
+    direction: ltr;
+  }
+}
+
+/* ------------------------------------------------------
+   TYPOGRAPHY (uses global h1/h2/p)
+------------------------------------------------------ */
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 1.5rem;
+}
+
+.section-text {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  color: var(--color-navy-soft);
+  line-height: 1.7;
+  max-width: 800px;
+}
+
+/* ------------------------------------------------------
+   IMAGES
+------------------------------------------------------ */
+
+.section-image {
+  width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.imageColumn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ------------------------------------------------------
+   GALLERY GRID
+------------------------------------------------------ */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ------------------------------------------------------
+   ALIGNMENT HELPERS
+------------------------------------------------------ */
+
+.section-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
