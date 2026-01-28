@@ -68,12 +68,12 @@ Consistent vertical rhythm across all sections
 Fully responsive on mobile, tablet, and desktop
 
 🖼️ Screenshots
-![Home](home.png)
-![Biography](bio.png)
-![Career](career.png)
-![Father](father.png)
+![Home](screenshots/home.png)
+![Biography](screenshots/bio.png)
+![Career](screenshots/career.png)
+![Father](screenshots/father.png)
 
-![Tributes](tributes.png)
+![Tributes](screenshots/tributes.png)
 
 📜 License
 This project is open‑source and available under the MIT License.
