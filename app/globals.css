@@ -1,3 +1,4 @@
+
 /* ------------------------------------------------------
    FONT IMPORTS
 ------------------------------------------------------ */
@@ -5,98 +6,95 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 /* ------------------------------------------------------
-   ROOT VARIABLES
+   ROOT VARIABLES — CINEMATIC DARK THEME
 ------------------------------------------------------ */
 :root {
-  /* Typography */
   --font-primary: "Montserrat", sans-serif;
   --font-serif: "Playfair Display", serif;
 
-  /* Core Palette */
-  --color-navy: #0A1A2F;        /* Deep, elegant navy */
-  --color-navy-soft: #1C2B3F;   /* Softer navy for body text */
-  --color-muted: #5A6475;       /* Muted gray for captions */
-  --color-bg: #F7F9FC;          /* Soft, clean background */
-  --color-text: #1A1A1A;        /* Neutral dark text */
+  --color-bg: #0B0E14;
+  --color-text: #F0EEE9;
+  --color-text-soft: #C7C5C0;
+  --color-muted: #8A8A85;
+  --color-accent: #FF6A3D;
+  --color-border: rgba(255,255,255,0.06);
 
-  /* Optional accents */
-  --color-accent: #C8A97E;      /* Muted gold for subtle highlights */
-  --color-border: #E2E6EB;      /* Light border for cards/sections */
+  --color-navy: var(--color-text);
+  --color-navy-soft: var(--color-text-soft);
 }
 
-
 /* ------------------------------------------------------
-   GLOBAL RESET / BASE
+   GLOBAL BASE
 ------------------------------------------------------ */
 html, body {
   margin: 0;
   padding: 0;
   font-family: var(--font-primary);
-  background-color: var(--color-bg);
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.04), transparent 60%), var(--color-bg);
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Smooth typography scaling */
-h1, h2, h3, p {
-  margin: 0;
-}
+h1, h2, h3, p { margin: 0; }
 
 /* ------------------------------------------------------
    HEADINGS
 ------------------------------------------------------ */
 h1 {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
-  font-weight: 600;
-  color: var(--color-navy);
+  font-size: clamp(2.5rem, 6vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
   line-height: 1.1;
 }
 
 h2 {
   font-family: var(--font-serif);
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-weight: 500;
-  color: var(--color-navy);
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: var(--color-text);
 }
 
 h3 {
   font-family: var(--font-primary);
   font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 500;
-  color: var(--color-navy-soft);
+  letter-spacing: 0.01em;
+  color: var(--color-text-soft);
 }
 
 /* ------------------------------------------------------
-   PARAGRAPHS & TEXT
+   PARAGRAPHS
 ------------------------------------------------------ */
 p {
   font-family: var(--font-primary);
-  font-size: 1.125rem;
-  font-weight: 500; /* lighter weight */
-  color: var(--color-navy-soft);
-  line-height: 1.7;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-text-soft);
+  line-height: 1.85;
+  letter-spacing: 0.01em;
 }
 
-
 .caption {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--color-muted);
   font-weight: 300;
   margin-top: 0.75rem;
 }
 
 /* ------------------------------------------------------
-   HERO SECTION
+   HERO
 ------------------------------------------------------ */
 .hero {
   width: 100%;
-  background: var(--color-bg);
-  padding: 5rem 0;
+  background: transparent;
+  padding: 10rem 0;
 }
 
 /* ------------------------------------------------------
-   LAYOUT CONTAINER
+   CONTAINER
 ------------------------------------------------------ */
 .container {
   max-width: 1200px;
@@ -104,7 +102,7 @@ p {
   padding: 0 1.5rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 @media (min-width: 768px) {
@@ -114,54 +112,48 @@ p {
   }
 }
 
-.textBlock {
-  max-width: 600px;
-}
+.textBlock { max-width: 600px; }
 
 /* ------------------------------------------------------
-   TYPOGRAPHY UTILITY CLASSES
+   TYPOGRAPHY UTILITIES
 ------------------------------------------------------ */
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
-  font-weight: 600;
-  color: var(--color-navy);
+  font-size: clamp(2.5rem, 6vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
   line-height: 1.1;
 }
 
 .subtitle {
   margin-top: 1.25rem;
   font-family: var(--font-primary);
-  font-size: 1.125rem;
-  color: var(--color-navy-soft);
-  line-height: 1.7;
+  font-size: 1.15rem;
+  color: var(--color-text-soft);
+  line-height: 1.85;
 }
 
 /* ------------------------------------------------------
    IMAGES
 ------------------------------------------------------ */
-.imageWrapper {
-  display: flex;
-  justify-content: center;
-}
+.imageWrapper { display: flex; justify-content: center; }
 
 .image {
   width: 100%;
   max-width: 350px;
-  border-radius: 0.75rem;
+  border-radius: 6px;
   object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-#father,
-#career,
-#bio {
-  scroll-margin-top: 120px; /* adjust based on navbar height */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
 }
 
+/* ------------------------------------------------------
+   NAVBAR
+------------------------------------------------------ */
 .navbar {
   width: 100%;
-  background-color: var(--color-navy);
-  color: white;
+  background-color: #0F141C;
+  color: var(--color-text);
   padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -169,16 +161,16 @@ p {
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .logo {
   font-family: var(--font-primary);
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-/* Desktop Navigation */
 .navLinks {
   display: flex;
   gap: 2rem;
@@ -187,32 +179,34 @@ p {
 
 .navLinks a {
   text-decoration: none;
-  color: white;
-  font-weight: 300;
+  color: var(--color-text);
+  font-weight: 600;
   font-size: 1rem;
   transition: opacity 0.2s ease;
 }
 
-.navLinks a:hover {
-  opacity: 0.7;
-}
+.navLinks a:hover { opacity: 0.7; }
 
-/* Mobile Toggle */
+/* ------------------------------------------------------
+   HAMBURGER ICON + MOBILE MENU
+------------------------------------------------------ */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
 }
 
 .hamburger span {
-  width: 25px;
+  width: 28px;
   height: 3px;
-  background: white;
-  border-radius: 2px;
+  background: var(--color-text);
+  border-radius: 3px;
+  transition: all 0.3s ease;
 }
 
-/* Mobile Menu */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -222,41 +216,55 @@ p {
     position: absolute;
     top: 70px;
     right: 0;
-    background-color: var(--color-navy);
+    background-color: #0F141C;
     width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    padding: 2rem 0;
-    display: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    display: flex;
   }
 
   .navLinks.open {
-    display: flex;
+    max-height: 300px;
+    padding: 2rem 0;
   }
 }
 
-/* ------------------------------------------------------
-   UNIVERSAL SECTION LAYOUT
------------------------------------------------------- */
+/* Hamburger → X animation */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
 
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ------------------------------------------------------
+   UNIVERSAL SECTION
+------------------------------------------------------ */
 .section {
   width: 100%;
-  padding: 6rem 0;
-  background: var(--color-bg);
+  padding: 8rem 0;
+  background: transparent;
   scroll-margin-top: 120px;
 }
 
-/* Optional dark variant */
 .section--dark {
-  background: var(--color-navy);
-  color: white;
+  background: #0F141C;
+  color: var(--color-text);
 }
 
 /* ------------------------------------------------------
-   CONTAINER
+   SECTION CONTAINER
 ------------------------------------------------------ */
-
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -264,12 +272,11 @@ p {
 }
 
 /* ------------------------------------------------------
-   GRID / ROWS
+   GRID
 ------------------------------------------------------ */
-
 .section-row {
   display: grid;
-  gap: 3rem;
+  gap: 6rem;
   grid-template-columns: 1fr;
 }
 
@@ -280,10 +287,9 @@ p {
   }
 }
 
-/* Reversed layout */
 .section-row.reverse {
   display: grid;
-  gap: 3rem;
+  gap: 6rem;
   grid-template-columns: 1fr;
 }
 
@@ -293,41 +299,38 @@ p {
     align-items: center;
     direction: rtl;
   }
-
-  .section-row.reverse > * {
-    direction: ltr;
-  }
+  .section-row.reverse > * { direction: ltr; }
 }
 
 /* ------------------------------------------------------
-   TYPOGRAPHY (uses global h1/h2/p)
+   SECTION TYPOGRAPHY
 ------------------------------------------------------ */
-
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
   font-weight: 600;
-  color: var(--color-navy);
+  letter-spacing: 0.015em;
+  color: var(--color-text);
   margin-bottom: 1.5rem;
 }
 
 .section-text {
   font-family: var(--font-primary);
-  font-size: 1.125rem;
-  color: var(--color-navy-soft);
-  line-height: 1.7;
+  font-size: 1.15rem;
+  color: var(--color-text-soft);
+  line-height: 1.85;
+  letter-spacing: 0.01em;
   max-width: 800px;
 }
 
 /* ------------------------------------------------------
-   IMAGES
+   SECTION IMAGES
 ------------------------------------------------------ */
-
 .section-image {
   width: 100%;
-  border-radius: 0.75rem;
+  border-radius: 6px;
   object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
 }
 
 .imageColumn {
@@ -337,9 +340,8 @@ p {
 }
 
 /* ------------------------------------------------------
-   GALLERY GRID
+   GALLERY
 ------------------------------------------------------ */
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -349,11 +351,9 @@ p {
 /* ------------------------------------------------------
    ALIGNMENT HELPERS
 ------------------------------------------------------ */
-
 .section-center {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-

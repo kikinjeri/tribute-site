@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 export default function Tributes() {
   const tributes = [
     {
@@ -37,31 +36,35 @@ export default function Tributes() {
       link: "https://www.thefreelibrary.com/George+Githii%3a+Editor+who+dared+challenge+the+State.-a0798765432",
     },
   ];
-
   return (
     <section id="tributes" className="section section--tint">
+      {" "}
       <div className="section-container">
-        <h2 className="section-title">Tributes</h2>
+        {" "}
+        <h2 className="section-title">Tributes</h2>{" "}
         <p className="section-subtitle">
-          Reflections from institutions, colleagues, and the public record.
-        </p>
-
+          {" "}
+          Reflections from institutions, colleagues, and the public record.{" "}
+        </p>{" "}
         <div className="tributes-grid">
+          {" "}
           {tributes.map((t, i) => (
             <div key={i} className="tribute-card">
-              <p className="tribute-quote">“{t.quote}”</p>
+              {" "}
+              <p className="tribute-quote">“{t.quote}”</p>{" "}
               <a
                 href={t.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="tribute-source"
               >
-                — {t.source}
-              </a>
+                {" "}
+                — {t.source}{" "}
+              </a>{" "}
             </div>
-          ))}
-        </div>
-      </div>
+          ))}{" "}
+        </div>{" "}
+      </div>{" "}
     </section>
   );
 }
