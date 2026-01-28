@@ -2,6 +2,8 @@ import Hero from "@/components/Hero";
 import Bio from "@/components/Bio";
 import Father from "@/components/Father";
 import Career from "@/components/Career";
+import Tributes from "@/components/Tributes";
+
 
 export default function HomePage() {
   return (
@@ -10,6 +12,7 @@ export default function HomePage() {
       <Bio />
       <Career />
       <Father />
+      <Tributes />
     </main>
   );
 }

@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# George Githii — Tribute Site
 
-## Getting Started
+A modern, elegant, and accessible tribute site honoring the life, career, and legacy of **George Githii** — journalist, editor, public intellectual, and one of Kenya’s most influential voices in media and political commentary.
 
-First, run the development server:
+Built with **Next.js**, **TypeScript**, and a clean editorial design system inspired by magazine layouts, archival journalism, and historical storytelling.
+
+---
+
+## 🚀 Getting Started
+
+Install dependencies:
 
 ```bash
+npm install
+
+Run the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🧱 Tech Stack
+Next.js  14 (App Router)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+React
 
-## Learn More
+TypeScript
 
-To learn more about Next.js, take a look at the following resources:
+CSS Modules
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next/Image optimization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+IntersectionObserver for scroll animations
 
-## Deploy on Vercel
+📁 Project Structure
+/app
+  /components
+    Hero.tsx
+    Bio.tsx
+    Career.tsx
+    Tributes.tsx
+  /gallery
+    hero.jpg
+    suit.jpg
+    bowtie.jpg
+    dad5.jpg
+  globals.css
+  sections.css
+  layout.tsx
+  page.tsx
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🏛️ Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Full‑bleed Hero section with overlay and top‑right aligned typography
+
+Biography section with responsive two‑column layout
+
+Career timeline with scroll‑triggered animations
+
+Editorial pull‑quotes styled for emphasis
+
+Tributes section with grid‑based cards
+
+Accessible typography using serif + sans‑serif pairing
+
+Consistent vertical rhythm across all sections
+
+Fully responsive on mobile, tablet, and desktop
+
+🖼️ Screenshots
+![Hero](hero.png)
+![Biography](bio.png)
+![Timeline](timeline.png)
+![Quotes](quotes.png)
+![Gallery](gallery.png)
+![Footer](footer.png)
+
+📜 License
+This project is open‑source and available under the MIT License.
+
+✨ Acknowledgements
+This tribute site was created with love and intention by Mwihaki Githii to honor the legacy of George Githii, preserving his voice, influence, and historical impact for future generations.

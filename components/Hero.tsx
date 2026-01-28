@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-export default function Hero() {
+export default function Home() {
   return (
-    <section id="home" className="hero-section">
-      <div className="hero-container">
-        {/* LEFT: IMAGE */}
+    <section id="home" className="hero">
+      <div className="hero-grid">
+        {/* LEFT — IMAGE */}
         <div className="hero-imageWrapper">
           <Image
             src="/gallery/dad5.jpg"
@@ -15,12 +15,10 @@ export default function Hero() {
           />
         </div>
 
-        {/* RIGHT: TEXT */}
+        {/* RIGHT — TEXT */}
         <div className="hero-text">
-          <h1 className="hero-title">George Githii</h1>
-          <p className="hero-tagline">
-            Journalist. Father. Man of God.
-          </p>
+          <h2>George Githii</h2>
+          <p>Academic. Journalist. Man of God. Father.</p>
         </div>
       </div>
     </section>

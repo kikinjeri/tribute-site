@@ -29,18 +29,15 @@ export default function Father() {
   ];
 
   return (
-    <section id="father" className="section section--tint">
+    <section id="father" className="section">
       <div className="section-container">
-        {/* Title */}
-        <h2 className="section-title fade-in">George the Father</h2>
-
-        {/* Narrative transition */}
-        <p className="section-subtitle fade-in">
+        <h2 className="section-title">Our Father</h2>
+        <p className="section-subtitle">
           A man of warmth, faith, humor, and unwavering devotion.
         </p>
 
-        {/* FIRST BLOCK */}
-        <div className="section-row fade-in">
+        {/* BLOCK 1 */}
+        <div className="section-row">
           <div>
             <p className="section-text">
               Beyond the newsroom and the public eye, George Githii was a father
@@ -57,18 +54,19 @@ export default function Father() {
           </div>
 
           <div className="imageColumn">
-            <Image
-              src="/gallery/silly-dad.jpg"
-              alt="George Githii and his daughter Mwihaki"
-              className="section-image"
-              width={500}
-              height={500}
-            />
+            <div className="section-imageWrapper">
+              <Image
+                src="/gallery/silly-dad.jpg"
+                alt="George Githii and his daughter Mwihaki"
+                fill
+                className="section-image"
+              />
+            </div>
           </div>
         </div>
 
-        {/* SECOND BLOCK (REVERSED) */}
-        <div className="section-row reverse fade-in">
+        {/* BLOCK 2 */}
+        <div className="section-row reverse">
           <div>
             <p className="section-text">
               He chose Ottawa because it was a safe place where his children
@@ -83,34 +81,34 @@ export default function Father() {
           </div>
 
           <div className="imageColumn">
-            <Image
-              src="/gallery/adidas.jpg"
-              alt="George Githii with his children"
-              className="section-image"
-              width={500}
-              height={500}
-            />
+            <div className="section-imageWrapper">
+              <Image
+                src="/gallery/adidas.jpg"
+                alt="George Githii with his children"
+                fill
+                className="section-image"
+              />
+            </div>
           </div>
         </div>
 
         {/* FINAL PARAGRAPH */}
-        <p className="section-text fade-in" style={{ marginTop: "3rem" }}>
+        <p className="section-text" style={{ marginTop: "3rem" }}>
           He was happiest and most proud of being a father to his three
           children. As a father he was patient, kind, loving, firm, stern,
           gentle, and deeply other‑regarding.
         </p>
 
         {/* GALLERY */}
-        <div id="gallery" className="gallery fade-in">
+        <div className="gallery">
           {images.map((src, i) => (
             <Image
               key={i}
               src={src}
               alt=""
-              className="section-image"
               width={400}
               height={400}
-              loading="lazy"
+              className="section-image"
               onClick={() => {
                 setIndex(i);
                 setOpen(true);
@@ -120,16 +118,12 @@ export default function Father() {
           ))}
         </div>
 
-        {/* LIGHTBOX */}
         <Lightbox
           open={open}
           close={() => setOpen(false)}
           index={index}
           slides={images.map((src) => ({ src }))}
         />
-
-        {/* Divider */}
-        <div className="section-divider fade-in"></div>
       </div>
     </section>
   );

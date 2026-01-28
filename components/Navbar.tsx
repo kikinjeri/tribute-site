@@ -11,9 +11,9 @@ export default function Navbar() {
       <div className="logo">George Githii</div>
 
       <div className="hamburger" onClick={() => setOpen(!open)}>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span />
+        <span />
+        <span />
       </div>
 
       <ul className={`navLinks ${open ? "open" : ""}`}>
@@ -28,6 +28,9 @@ export default function Navbar() {
         </li>
         <li>
           <Link href="/#father">Father</Link>
+        </li>
+        <li>
+          <Link href="/#tributes">Tributes</Link>
         </li>
       </ul>
     </nav>

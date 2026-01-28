@@ -2,19 +2,16 @@ import Image from "next/image";
 
 export default function Bio() {
   return (
-    <section id="bio" className="section section--alt">
+    <section id="bio" className="section">
       <div className="section-container">
-        {/* Title */}
-        <h2 className="section-title fade-in">Biography</h2>
-
-        {/* Narrative transition */}
-        <p className="section-subtitle fade-in">
+        <h2 className="section-title">Biography</h2>
+        <p className="section-subtitle">
           The story of a sharp mind shaped by history, curiosity, and
           conviction.
         </p>
 
-        <div className="section-row fade-in">
-          {/* TEXT COLUMN */}
+        <div className="section-row">
+          {/* LEFT: BIO TEXT + QUOTES TOGETHER */}
           <div>
             <p className="section-text">
               George Githii was a journalist, thinker, and public intellectual
@@ -23,17 +20,27 @@ export default function Bio() {
               most influential editorial voices of his generation.
             </p>
 
-            <p className="section-text">
-              His work spanned decades of political transformation, and he
-              remained committed to truth, integrity, and the power of ideas.
-              Beyond the newsroom, he was a mentor, a storyteller, and a man
-              deeply rooted in the history of his country.
-            </p>
+            <div className="bio-quotes-inline">
+              <h3 className="career-quotes-title">Quotes from George Githii</h3>
+
+              <p className="quote-line">
+                “When you rattle a snake, you must be prepared to be bitten.”
+              </p>
+              <p className="quote-line">
+                “The press must remain the conscience of the nation.”
+              </p>
+              <p className="quote-line">
+                “Journalism is not for the faint-hearted.”
+              </p>
+              <p className="quote-line">
+                “If the government says it is raining, check for yourself.”
+              </p>
+            </div>
           </div>
 
-          {/* IMAGE COLUMN */}
+          {/* RIGHT: IMAGE STAYS WHERE IT IS */}
           <div className="imageColumn">
-            <div className="section-imageWrapper">
+            <div className="bio-imageWrapper">
               <Image
                 src="/gallery/suit.jpg"
                 alt="George Githii"
@@ -43,10 +50,8 @@ export default function Bio() {
             </div>
           </div>
         </div>
-
-        {/* Optional divider for flow */}
-        <div className="section-divider fade-in"></div>
       </div>
     </section>
   );
 }
+
