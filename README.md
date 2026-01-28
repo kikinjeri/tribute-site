@@ -67,13 +67,23 @@ Consistent vertical rhythm across all sections
 
 Fully responsive on mobile, tablet, and desktop
 
-🖼️ Screenshots
-![Home](/public/screenshots/home.png)
-![Biography](/public/screenshots/bio.png)
-![Career](/public/screenshots/career.png)
-![Father](/public/screenshots/father.png)
+## 🖼️ Screenshots
 
-![Tributes](/public/screenshots/tributes.png)
+### Home  
+![Home](screenshots/home.png)
+
+### Biography  
+![Biography](screenshots/bio.png)
+
+### Career  
+![Career](screenshots/career.png)
+
+### Father  
+![Father](screenshots/father.png)
+
+### Tributes  
+![Tributes](screenshots/tributes.png)
+
 
 📜 License
 This project is open‑source and available under the MIT License.
