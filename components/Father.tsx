@@ -13,7 +13,7 @@ export default function Father() {
     "/gallery/boxing.jpg",
     "/gallery/carletondad.jpg",
     "/gallery/atdesk.jpg",
-    "/gallery/dad1.jpg",
+    "/gallery/eating.jpg",
     "/gallery/dad2.jpg",
     "/gallery/dad4.jpg",
     "/gallery/dad5.jpg",

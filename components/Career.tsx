@@ -4,28 +4,30 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function Career() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
 
-    const elements = Array.from(container.querySelectorAll(".timeline-item"));
+    if (container) {
+      const elements = Array.from(container.querySelectorAll(".timeline-item"));
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 },
-    );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
 
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+      elements.forEach((el) => observer.observe(el));
+
+      return () => observer.disconnect();
+    }
   }, []);
 
   const items = [
@@ -48,7 +50,7 @@ export default function Career() {
       link: "https://www.thefreelibrary.com/George+Githii%3a+Editor+who+dared+challenge+the+State.-a0798765432",
     },
     {
-      period: "Late 1960s",
+      period: "Late 196s",
       fact: "Published editorials critical of the government, drawing national attention.",
       quote: "“When you rattle a snake, you must be prepared to be bitten.”",
       source: "Kenyans.co.ke",

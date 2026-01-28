@@ -90,3 +90,13 @@ This project is open‑source and available under the MIT License.
 
 ✨ Acknowledgements
 This tribute site was created with love and intention by Mwihaki Githii to honor the legacy of George Githii, preserving his voice, influence, and historical impact for future generations.
+
+
+$ vercel --prod
+Vercel CLI 50.8.1
+🔍  Inspect: https://vercel.com/kikinjeris-projects/tribute-site/AEQjLJ7vHEpx2sD
+V2oewe2t2XE7n [5s]
+⏳  Production: https://tribute-site-25zzmnwyb-kikinjeris-projects.vercel.app [5s
+✅  Production: https://tribute-site-25zzmnwyb-kikinjeris-projects.vercel.app [41
+s]
+🔗  Aliased: https://tribute-site.vercel.app [41s]
